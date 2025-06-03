@@ -1,0 +1,80 @@
+## Ignore Visual Studio temporary files, build results, and
+## user-specific files
+
+# Build results
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.vcxproj.user
+
+# Rider
+.idea/
+*.sln.iml
+
+# Visual Studio Code
+.vscode/
+
+# ASP.NET Core secrets
+**/secrets.json
+
+# dotnet user secrets
+**/appsettings.Development.json
+
+# Others
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+*.cache
+*.dbmdl
+*.bak
+*.pidb
+*.svclog
+*.pdb
+*.mdb
+*.DS_Store
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# dotnet watch working folder
+**/.dotnet-watch.json
+
+# Coverage
+coverage/
+*.coverage
+*.coveragexml
+*.codecoverage
+
+# Logs
+logs/
+*.log
+
+# Publish output
+publish/
+*.Publish.xml
+
+# npm packages (if frontend included)
+node_modules/
+
+# Optional: .env file for configs
+.env
+.env.*
+
+# Resharper files
+*.DotSettings.user
+
+# JetBrains Rider
+.idea/
+
+# Docker
+**/docker-compose.override.yml
+**/Dockerfile.*
