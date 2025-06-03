@@ -11,6 +11,7 @@ namespace CoinXplorer_API.Services
         {
             _httpClient = httpClient;
 
+            // Set a default base address for the HttpClient
             if (!_httpClient.DefaultRequestHeaders.UserAgent.Any())
             {
                 _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("CoinXplorerApp/1.0 (+https://yourdomain.com)");

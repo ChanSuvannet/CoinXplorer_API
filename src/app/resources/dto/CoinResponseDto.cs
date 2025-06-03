@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace CoinXplorer_API.DTOs
 {
+    // This class represents the response structure for a coin's listing
     public class CoinResponseDto
     {
         public string Id { get; set; }

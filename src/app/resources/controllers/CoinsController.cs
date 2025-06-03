@@ -6,6 +6,7 @@ namespace CoinXplorer_API.Routes
     {
         public static RouteGroupBuilder MapCoinRoutes(this IEndpointRouteBuilder app)
         {
+            // Define the route group for coins
             var group = app.MapGroup("/coins");
 
             group.MapGet("/live", async (CoinExternalService service) =>
