@@ -23,7 +23,7 @@ builder.Services.AddCors(options =>
 // HttpClient can be singleton, no problem
 builder.Services.AddHttpClient();
 
-// Register CoinExternalService as scoped (good practice if it uses HttpClient)
+// Register CoinExternalService as scoped 
 builder.Services.AddScoped<CoinExternalService>();
 
 // SignalR
@@ -43,7 +43,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors("AllowAll"); 
+app.UseCors("AllowAll");
 
 app.MapControllers();
 app.MapAppRoutes();
