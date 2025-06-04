@@ -1,11 +1,17 @@
 using CoinXplorer_API.Services;
 using CoinXplorer_API.Hubs;
 using AppRoute.Routes;
+using CoinXplorer_API.ErrorsFilter;
+using CoinXplorer_API.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Register services
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<ExceptionErrorsFilter>(); // Global error filter
+});
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -25,7 +31,6 @@ builder.Services.AddHttpClient();
 
 // Register CoinExternalService as scoped 
 builder.Services.AddScoped<CoinExternalService>();
-
 // SignalR
 builder.Services.AddSignalR();
 
@@ -44,10 +49,10 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseCors("AllowAll");
+app.UseMiddleware<RequestLoggingMiddleware>();
 
 app.MapControllers();
 app.MapAppRoutes();
-
 app.MapHub<CoinHub>("/coinhub");
 
 app.Run();
